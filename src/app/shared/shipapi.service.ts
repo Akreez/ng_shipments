@@ -6,5 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class ShipapiService {
 
-  constructor(http: HttpClient) { }
+  constructor(private http: HttpClient) { }
+
+  getShipments$(){
+    const url = 'http://localhost:8000/api/shipments';
+    return this.http.get(url);
+  }
+  // createShipment$(shipment: any){
+  //   const url = 'http://localhost:8000/api/shipments';
+  //   return this.http.post(url, shipment);
+  // }
 }
