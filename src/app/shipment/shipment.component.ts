@@ -37,7 +37,7 @@ export class ShipmentComponent {
       }
     });
   }
-  
+
   createShipment(event: SubmitEvent) {
     console.log('Létrehozás...')
     console.log(this.shipmentForm.value)
@@ -52,7 +52,7 @@ export class ShipmentComponent {
       next: (res: any) => {
         console.log(res.data);
         this.getShipments();
-        this.shipmentForm;
+        this.shipmentForm.reset();
     },
       error: (err: any) => {
         console.log(err);
