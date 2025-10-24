@@ -12,8 +12,8 @@ export class ShipapiService {
     const url = 'http://localhost:8000/api/shipments';
     return this.http.get(url);
   }
-  // createShipment$(shipment: any){
-  //   const url = 'http://localhost:8000/api/shipments';
-  //   return this.http.post(url, shipment);
-  // }
+  createShipment$(shipment: any){
+    const url = 'http://localhost:8000/api/shipments';
+    return this.http.post(url, shipment);
+  }
 }

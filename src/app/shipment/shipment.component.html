@@ -1,12 +1,59 @@
 <p>shipment works!</p>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#addModal">
+  Hozzáadás
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addModalLabel">Csomag felvétele</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (submit)="createShipment($event)" [formGroup]="shipmentForm" id="shipmentForm">
+            <div>
+                <div>
+                    <label for="shipmentId" class="form-label">CsomagId</label>
+                    <input type="text" class="form-control" id="shipmentId" formControlName="shipmentId">
+                </div>
+                <div>
+                    <label for="sentDate" class="form-label">Küldés Dátuma</label>
+                    <input type="text" class="form-control" id="sentDate" placeholder="YYYY-MM-DD" formControlName="sentDate">
+                </div>
+                <div>
+                    <label for="endDate" class="form-label">Érkezés Dátuma</label>
+                    <input type="text" class="form-control" id="endDate" placeholder="YYYY-MM-DD" formControlName="endDate">
+                </div>
+                <div>
+                    <label for="addressee" class="form-label">Feladó</label>
+                    <input type="text" class="form-control" id="addressee" formControlName="addressee">
+                </div>
+                <div>
+                    <label for="targetCity" class="form-label">Város</label>
+                    <input type="text" class="form-control" id="targetCity" formControlName="targetCity">
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
+        <button type="submit" class="btn btn-primary" form="shipmentForm">Hozzáadás</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <table class="table table-striped table-info">
     <thead>
         <tr>
             <th>Id</th>
             <th>CsomagId</th>
-            <th>KüldésDátuma</th>
-            <th>ÉrkezésDátuma</th>
+            <th>Küldés Dátuma</th>
+            <th>Érkezés Dátuma</th>
             <th>Feladó</th>
             <th>Város</th>
         </tr>
@@ -26,47 +73,23 @@
 </table>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-  Hozzáadás
+<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#aboutModal">
+  Névjegy
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="addModalLabel">Csomag felvétele</h1>
+        <h1 class="modal-title fs-5" id="aboutModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
-            <div>
-                <div>
-                    <label for="shipmentId" class="form-label">CsomagId</label>
-                    <input type="text" class="form-control" id="shipmentId">
-                </div>
-                <div>
-                    <label for="sentDate" class="form-label">KüldésDátuma</label>
-                    <input type="text" class="form-control" id="sentDate" placeholder="YYYY-MM-DD">
-                </div>
-                <div>
-                    <label for="endDate" class="form-label">ÉrkezésDátuma</label>
-                    <input type="text" class="form-control" id="endDate" placeholder="YYYY-MM-DD">
-                </div>
-                <div>
-                    <label for="addressee" class="form-label">Feladó</label>
-                    <input type="text" class="form-control" id="addressee">
-                </div>
-                <div>
-                    <label for="targetCity" class="form-label">Város</label>
-                    <input type="text" class="form-control" id="targetCity">
-                </div>
-            </div>
-        </form>
+        Kövesdi Ákos - 2025.10.23 - IIN-2
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
-        <button type="submit" class="btn btn-primary" form="shipmentForm">Hozzáadás</button>
       </div>
     </div>
   </div>
